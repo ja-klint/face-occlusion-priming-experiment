@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Experiment</title>
+
+  <!-- lab.js library -->
+  <script src="lib/lab.js" data-labjs-script="library"></script>
+  <script src="lib/lab.fallback.js" data-labjs-script="fallback"></script>
+  <link rel="stylesheet" href="lib/lab.css">
+
+  <!-- Experiment code and styles -->
+  <script>
+    // -------------------------------------------------------
+    // Parameters injected by SoSciSurvey (or set manually for testing)
+    // expGroup:   1 = positive, 2 = neutral, 3 = negative
+    // expVersion: 1, 2, 3, or 4
+    // -------------------------------------------------------
+    // SoSciSurvey will replace these with the actual values, e.g.:
+    //   window.expGroup   = %labjs_expGroup%;
+    //   window.expVersion = %labjs_expVersion%;
+    //
+    // For local testing, set defaults here:
+    
+    // -------------------------------------------------------
+    // Access variables from the parent SoSciSurvey window
+    // -------------------------------------------------------
+    window.expGroup   = (window.parent && window.parent.expGroup)   || 1;
+    window.expVersion = (window.parent && window.parent.expVersion) || 1;
+    window.debug      = (window.parent && window.parent.debug)      || 0;
+    window.dispSize   = (window.parent && window.parent.dispSize)   || 3;
+    window.doPractice = (window.parent && window.parent.doPractice) || 1;
+    window.primeTime  = (window.parent && window.parent.primeTime)  || 67;
+
+    console.log("Parameters received:", window.expGroup, window.expVersion);
+  </script>
+  <script src="script.js" defer="true"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container fullscreen" data-labjs-section="main">
+    <main class="content-vertical-center content-horizontal-center">
+      <div>
+        <h2>Laddar experiment</h2>
+        <p>Experimentet laddas och bör starta inom några sekunder.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
